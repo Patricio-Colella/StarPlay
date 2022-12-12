@@ -1,0 +1,7 @@
+#general{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("../assets/imgs/starwars fondo.webp");
+    background-size: 100% 100%;
+}

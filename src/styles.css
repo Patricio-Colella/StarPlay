@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: starwarsfont;
+    src: url(assets/fonts/StarJediOutline-y0xm.otf) format("opentype");
+}
+
+* {
+    font-family: "starwarsfont";
+}

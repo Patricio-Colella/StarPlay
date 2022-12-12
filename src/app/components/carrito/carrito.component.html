@@ -1,0 +1,37 @@
+<div id="carritoDiv" *ngIf="lista.length!==0&&loading===false">
+    <table class="table table-warning carritoLista">
+        <thead>
+            <tr>
+              <th scope="col">personaje</th>
+              <th scope="col">categoria</th>
+              <th scope="col">precio</th>
+              <th scope="col">cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let juguete of lista; index as i">
+              <td>{{juguete["nombre"]}}</td>
+              <td>{{juguete["categoria"]}}</td>
+              <td>{{(juguete["precio"]*moneda[1]).toFixed(2)}} {{moneda[0]}}</td>
+              <td><img (click)="masCantCarrito(juguete.nombre)" src="../../../assets/imgs/flecha.png" class="arrowUp">{{juguete["cant"]}}<img (click)="menosCantCarrito(juguete.nombre)" src="../../../assets/imgs/flecha.png" class="arrowDown"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    moneda
+                <select (change)="cambiarMoneda($event.target)">
+                    <option value="ARG">ARG</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select></td>
+                <td colspan="2">total: {{(total*moneda[1]).toFixed(2)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<section id="loading"*ngIf="loading===true">
+    <span>CARGANDO...</span>
+    <img src="./../../../assets/imgs/estrella de la muerte.gif" alt="">
+</section>
+
+<div id="carritoDivEmpty" *ngIf="lista.length===0&&loading===false">No tiene Juguetes en su carrito, vuelva al inicio y seleccione alguno</div>

@@ -1,0 +1,26 @@
+<section id="products"*ngIf="juguetes.length===6">
+    <div class="individualProduct" *ngFor="let juguete of juguetes; index as i">
+        <img src="{{juguete.img}}" class="img-fluid {{juguete.categoria}}" alt="">
+        <div class="props">
+            <span class="nameProp">{{juguete["name"]}}</span>
+            <button class="buyButton  btn btn-danger">{{juguete["precio"]}} ARG</button>
+        </div>
+        <div class="extendedProps">
+            <div class="reverse-text">
+                <span>PELICULAS:</span>
+                <span>{{juguete["peliculas"]}}</span>
+            </div>
+            <div class="reverse-props">
+                <span>{{juguete["categoria"]}}</span>
+                <span>{{juguete["tamanio"]}}</span>
+                <button class="buyButton btn btn-danger" (click)="aniadirCarrito(juguete.name,juguete.precio)">añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="loading"*ngIf="juguetes.length!==6">
+    <span>CARGANDO...</span>
+    <img src="./../../../assets/imgs/estrella de la muerte.gif" alt="">
+</section>

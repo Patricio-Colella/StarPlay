@@ -1,0 +1,76 @@
+
+/*div correspondiente a la lista del carrito de compras*/
+/*INICIO*/
+#carritoDiv{
+    height: max-content;
+    min-height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;margin: 2% 0%;
+}
+
+.carritoLista{
+    width: 80%;
+    border: 4px rgb(255, 255, 255) solid;
+}
+
+.carritoLista th{
+    color: yellow;
+    background-color: black;
+}
+
+.arrowUp{
+    cursor: pointer;
+    height: 10px;
+    transform: rotate(90deg);
+    margin: 0% 5%;
+}
+
+.arrowDown{
+    cursor: pointer;
+    height: 10px;
+    transform: rotate(-90deg);
+    margin: 0% 5%;
+}
+
+.arrowUp:hover{
+    transform: scaleY(200%) rotate(90deg);
+}
+
+.arrowDown:hover{
+    transform: scaleY(200%) rotate(-90deg);
+}
+/*FINAL*/
+
+/*div correspondiente a carrito de compras cargando*/
+/*INICIO*/
+#loading{
+    height: 80vh;
+    width: 100vw;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:yellow
+}
+
+#loading img{
+    margin-top: 10%;
+    height: 15vw;
+    width: 15vw;
+}
+/*FINAL*/
+/*div correspondiente a carrito de compras vacio*/
+/*INICIO*/
+#carritoDivEmpty{
+    height: 80vh;
+    color: yellow;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/*FINAL*/
